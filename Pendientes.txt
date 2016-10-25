@@ -1,0 +1,135 @@
+!ESTO Primero
+
+ControlZone Rendering: 
+
+	Estoy aca
+	El Selcetplayer hace lio con los state.
+		el Terminar Ronda sube 2 As
+
+	Utilizar Test  para paso de tiempo? Dormir? Descanzar Caminar. Con un menu? con un Dialog?
+	Aplicar paso de tiempo a los FX de los eqiopos seleccionados.
+	Utilizar Test2 para Aplicar fin de combate. (elemina algunos FX y reestablece STA).
+
+PJ:
+	Acciones:
+		Guardar
+		Guardar Como
+		Fullera
+		
+	Asociar Paso del Tiempo con Alimentacion,Hidratacion y Sueño.
+
+Context:
+	-Modelo de Combate en BD
+		+Fecha,Hora,Min,As
+		+Team: L y R
+		+CentralRows Completas
+		+faltan campos
+	-Guardar Partida.
+	-Cargar Partida.
+	-Login con Manager de Partidas.
+
+Acciones Grupales:
+	Dialog para elegir entre: Dormir, Viajar, Comer, Beber, descansar, vigilar.
+	spiner para tiempo. 
+	habria que agregar campo de Proporcional Restore of PP. bardo.
+
+Consola General:
+Escribir tipo log todos los eventos, con Fecha Real y Fecha Virtual + Personaje + Prop + Valor de cambio.
+Armar una clase console para poder almacenar las entradas con diferentes tag para futuro filtro.
+
+Migrar todo el ajax de teams a _Id. No se Puede los Teams se sacan de los PJs.
+
+Posibilidad de usar el campo notas con un codigo y un procesador de texto para asignar efectos automaticamente.
+
+
+Crear Objetos que ordenen las funciones-eventos 
+	-Seguir migrando inicializaciones de controles
+	-Seguir corrigiendo Funcs
+	-Migrar Funcionamiento de Turnos
+		+Establecer funcionamiento de Ini Simulada.
+		+Funcion de Calculo 
+		+ReRenderiazado de lista ordenada.
+
+Mantenimiento:
+	-Limpiar Css:
+		+ Crear clases para los controles Espejo
+
+CORROBORAR Busquedas por ID
+
+
+
+Opcionales:
+	FX:
+	reestrcuturar.Podria tener una Clase FX con todos los Metodos.
+	Next Player:
+	Bloqueo de Slm durante el turno.
+
+
+
+(Funcionales)
+-Team = Todos ???
+-Fecha
+
+
+(Esteticos)
+-Progres bar para PP y STA
+-Iconos de FX en la columna Central? por ahora no
+-Aplicar codigo de Sprites para cambiar la IMGEN del Resumen de los personajes
+
+Falta corregir:
+
+NOTAS de Desarrollo:
+Para Agregar Campo-Control al Personaje:
++ Crear Control con el id= "LIn"+"DD"+"Team"
+			Caracteres	=	3	  2     X(no importa)
++ Modificar en App.js Schema de la BD
+	nombre propiedad:  "DD"+"Team"
+	Caracteres	=	    2     X(no importa)
++ Modificar en mjs.js funciones de comp/descomp
+
+
+
+
+Funcionalidades:
+- Validacion de Maximos y Restantes
+- Interactividad Efectos y modificadores
+- Calculo de Iniciativa
+- Descuento de duraciones
+- Calendario y Fecha en Pantalla
+- Tablas para:
+	Profesiones
+	Efectos/Estados-UDMs
+- Turno en BD
+	+ Schema
+
+
+Listas de Habilidades Especiales
+- Interfaz Simple
+- Las categorias
+- Vista Doble
+- Schema
+	+ Dominio
+	+ Tipo
+	+ Profesion?
+	+ Restricciones
+	+ Titulo
+	+ Sinopsis
+	+ Icono
+	+ HE[24]
+		+ LVL
+		+ PP
+		+ STA
+		+ Bloke
+		+ Restricciones
+		+ Alcance
+		+ Duracion
+		+ Blanco
+		+ Tipo de Casteo
+		+ Descripcion
+		+ Base o DIrigido
+		+ Tabla de Daño
+		+ Tipo de Critico
+		+ Icono :D
+- DB
+
+

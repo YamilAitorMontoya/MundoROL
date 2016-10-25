@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<title>Editor de Listas de Habilidades Especiales || LPDM</title>
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="localhost\css\MisEstilos.css">
+<link rel="stylesheet" type="text/css" href="localhost\css\jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="localhost\css\jquery-ui.theme.css">
+<link rel="stylesheet" type="text/css" href="localhost\css\MenuStyles.css">
+<!-- Scripts -->
+
+<script type="text/javascript" src="localhost\js\jquery.js" ></script>
+<script type="text/javascript" src="localhost\js\jquery-ui.js"></script>
+<script type="text/javascript" src="localhost\js\mjs.js"> </script>
+<script type="text/javascript" src="localhost\js\MenuScript.js"></script>
+<script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+</script>
+<script>
+ $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+</script>
+<script>
+	$(function () {
+		$("#menu").menu();
+	});
+</script>
+<script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+<!--<script type="text/javascript">
+	$('button[name="b1"]').click(function(){
+		var $n1 = $('#n1');
+		var $n2 = $('#n2');
+		$('#res').text('La suma es '+ Number($n1.val())+Number($n2.val()));
+	 });
+</script>-->
+<!-- Inner Styles -->
+<style>	.ui-menu {	width: 250px;}</style>
+</head>
+
+<body>
+
+<header><center><strong><p class="Titulos"> 
+Editor de Listas de Habilidades Especiales 
+</p></strong></center></header>
+
+<nav>
+<div id='cssmenu'>
+<ul>
+   <li><a href='#'><span>Home</span></a></li>
+   <li><a href='#'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>
+   Dominio de Poder</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Magicas</span></a>
+            <ul>
+               <li class='has-sub'><a href='#'><span>Esencia</span></a>
+               		<ul>
+               			<li><a href='#'><span>Abiertas</span></a></li>
+               			<li class='last'><a href='#'><span>Cerradas</span></a></li>
+               		</ul>
+               </li>
+               <li class='has-sub'><a href='#'><span>Canalizacion</span></a>
+               		<ul>
+               			<li><a href='#'><span>Abiertas</span></a></li>
+               			<li class='last'><a href='#'><span>Cerradas</span></a></li>
+               		</ul>
+               </li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li><a href='#'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+</div>
+<!-- Jquery Menu --
+<ul id="menu" >
+	<li ><a href="#"><strong>Dominio de Poder
+	</strong></a>
+	<ul>
+		<li><a href="#11">Magicas</a>
+		<ul>
+			<li><a href="#111">Esencia</a>
+			<ul>
+				<li><a href="#1111">Abiertas</a></li>
+				<li><a href="#1112">Cerradas</a></li>
+			</ul></li>
+			<li><a href="#112">Canalizacion</a>
+			<ul>
+				<li><a href="#1111">Abiertas</a></li>
+				<li><a href="#1112">Cerradas</a></li>
+			</ul></li>
+		</ul></li>
+		<li><a href="#12">Fisicas</a>
+		<ul>
+			<li><a href="#121">Generales</a></li>
+			<li><a href="#122">Especificas</a></li>
+		</ul></li>
+	</ul></li>
+</ul>
+-->
+</nav>
+<table>
+	<tr>
+		<th><img src="images\Anillo ancha.jpg"></th>
+		<th><img src="images\Anillo ancha.jpg"></th>
+	</tr>
+</table>
+<section id=”contenedor”>
+	<section id=”principal”>
+		<article>
+		</article>
+	</section>
+	<aside>
+	</aside>
+</section>
+ 
+<footer>
+	<div id="accordion">
+	  <h3>Lista 1</h3>
+	  <div>
+	    <form action="">
+	    	n1:<br>
+	    	<input type="number" id="n1" min="0" max="10"></input><br>
+	    	n2:<br>
+	    	<input type="number" id="n2" min="0" max="15" width="200"> </input><br>
+	    	<button name="b1" type="button"> sumar </button> <br>
+	    	<p id="res"> - </p>
+	    	<script type="text/javascript" >
+			$( "input" )
+			  .change(function() {
+			    var $n1 = $('#n1');
+	    			var $n2 = $('#n2');
+	    			var suma = Number($n1.val())+Number($n2.val());
+	    			$('#res').text('La suma es '+ suma );
+			  });
+			</script>
+	    </form>
+	  </div>
+	  <h3>Lista 2</h3>
+	  <div id="tabs">
+	    <ul>
+	    	<li><a href="#tabs-1">Hab 1</a></li>
+	    	<li><a href="#tabs-2">Hab 2</a></li>
+	    	<li><a href="#tabs-3">Hab 3</a></li>
+	    </ul>
+	    <div id="tabs-1">
+	    	<p>Resumen 1 aca</p><br>
+	    	<p>Detalle 1 aca</p><br>
+	    </div>
+	    <div id="tabs-2">
+	    	<p>Resumen 2 aca</p><br>
+	    	<p>Detalle 2 aca</p><br>
+	    </div>
+	    <div id="tabs-3">
+	    	<p>Resumen 3 aca</p><br>
+	    	<p>Detalle 3 aca</p><br>
+	    </div>
+	  </div>
+	  <h3>Lista 3</h3>
+	  <div>
+	    <p>
+	    N
+	    </p>
+	    <ul>
+	      <li>List item one</li>
+	      <li>List item two</li>
+	      <li>List item three</li>
+	    </ul>
+	  </div>
+	</div>
+</footer>
+
+</body>
+
+</html>

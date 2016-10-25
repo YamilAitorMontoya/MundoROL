@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Editor de Listas de Habilidades Especiales || LPDM</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js" ></script>
+</head>
+
+<body>
+<script type="text/javascript">
+	var dimensions = { width: 10, height: 15, length: 20 };
+	var dimtoUp = {width:15};
+	var keyVal = $.map( dimtoUp, function( value, key ) {
+  		return {"Propiedad":key,"Valor":value};
+	});
+	dimensions[keyVal[0].Propiedad] = keyVal[0].Valor;
+	console.log(dimensions);
+	//JSONObject person =  jsonArray.getJSONObject(0).getJSONObject("person");
+	//person.put("name", "Sammie");
+
+</script>
+<script type="text/javascript">
+	/*function getObjects(obj, key, val) {
+	    var objects = [];
+	    for (var i in obj) {
+	        if (!obj.hasOwnProperty(i)) continue;
+	        if (typeof obj[i] == 'object') {
+	            objects = objects.concat(getObjects(obj[i], key, val));
+	        } else if (i == key && obj[key] == val) {
+	            objects.push(obj);
+	        }
+	    }
+	    return objects;
+	}
+	Use like so:
+
+	getObjects(TestObj, 'id', 'A'); // Returns an array of matching objects*/
+</script>
+<header>
+Editor de Listas de Habilidades Especiales 
+</header>
+<nav>
+	
+</nav>
+
+<section id=”contenedor”>
+	<section id=”principal”>
+		<article>
+		</article>
+	</section>
+	<aside>
+	</aside>
+</section>
+ 
+<footer>
+	
+</footer>
+
+</body>
+
+</html>

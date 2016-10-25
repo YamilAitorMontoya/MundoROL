@@ -1,0 +1,17 @@
+{
+  "name": "rgmh",
+  "version": "0.0.1",
+  "description": "MEAN general Propouse",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aitor",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jquery": "^2.2.3",
+    "mongoose": "^4.4.12"
+  }
+}

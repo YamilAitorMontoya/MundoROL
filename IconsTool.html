@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Combate || LPDM</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css\MisEstilos.css">
+  <link rel="stylesheet" type="text/css" href="css\jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="css\jquery-ui.theme.css">
+  <!-- Scripts -->
+  <script type="text/javascript" src="js\jquery.js" ></script>
+  <script type="text/javascript" src="js\jquery-ui.js"></script>
+</head>
+<body>
+	<div id="FXTools">
+	      <label id="RLaImg"for="RImgName">Nombre FX:</label>
+	      <input type="text" id="RFXName"></input><br>
+	      <label id="RLaImg"for="RImgName">Imagen:</label>
+	      <input type="text" id="RImgName"></input><br>
+	      <label id="RLaX" for="RSlX">X:</label>
+	      <label id="RLaXa" for="RSlX">Xa</label>
+	      <div id="RSlX"></div>
+	      <label id="RLaY" for="RSlY">Y:</label>
+	      <label id="RLaYa" for="RSlY">Ya</label>
+	      <div id="RSlY"></div>
+	      <label id="RLaXw" for="RInImgW">Width</label>
+	      <input type="text" id="RInImgW"></input><br>
+	      <label id="RLaYw" for="RInImgH">Height</label>
+	      <input type="text" id="RInImgH"></input><br>
+	      <label for="RInFXPTipo">tipo</label>
+	      <input type="text" id="RInFXPTipo" class="In50"></input><br>
+	      <label for="RInFXPIndex">Indice</label>
+	      <input type="text" id="RInFXPIndex" class="In50"></input><br>
+	      <button type="button" id="RInSaveFX" class="FTbtn">Guardar FX </button>
+	      <br>
+	      <br>
+	      <img  id="IconTest">
+	      <br>
+	      <br>
+	      <button type="button" id="MInLoadFX" class="FTbtn">Cargar FX </button>
+	      <div id="MpFX">
+	      </div>
+	    </div>
+	    <div id="UDMTools">
+	      <br>
+	      <br>
+	      <label for="RUDMName">Nombre UDM:</label>
+	      <input type="text" id="RUDMName"></input><br>
+	      <label for="RInUDMCoef">Coef</label>
+	      <input type="text" id="RInUDMCoef" class="In50"></input><br>
+	      <label for="RInUDMTipo">Tipo: 0= Temporales 1=Atemporales </label>
+	      <input type="text" id="RInUDMTipo" class="In50"></input><br>
+	      <button type="button" id="RInSaveUDM" class="FTbtn">Guardar UDM</button>
+	      <button type="button" id="RInLoadUDM" class="FTbtn">Cargar UDM</button>
+	      <br>
+	      <div id="MpUDM">
+	      </div>
+	    </div>
+	    <script type="text/javascript" src="js/Controles.js"></script>
+   </body>
+</html>

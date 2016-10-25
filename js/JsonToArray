@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Editor de Listas de Habilidades Especiales || LPDM</title>
+	<script type="text/javascript" src="localhost\js\jquery.js" ></script>
+</head>
+
+<body>
+<script type="text/javascript">
+	var dimensions = { width: 10, height: 15, length: 20 };
+	var keyVal = $.map( dimensions, function( value, key ) {
+  		return {"Propiedad":key,"Valor":value};
+});
+	console.log(keyVal);
+</script>
+<header>
+Editor de Listas de Habilidades Especiales 
+</header>
+<nav>
+	
+</nav>
+
+<section id=”contenedor”>
+	<section id=”principal”>
+		<article>
+		</article>
+	</section>
+	<aside>
+	</aside>
+</section>
+ 
+<footer>
+	
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Combate || LPDM</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css\MisEstilos.css">
+  <link rel="stylesheet" type="text/css" href="css\jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="css\jquery-ui.theme.css">
+  <!-- Scripts -->
+  <script type="text/javascript" src="js\jquery.js" ></script>
+  <script type="text/javascript" src="js\jquery-ui.js"></script>
+</head>
+<body>
+	<div style="display:none" id="dialog">Are you sure you want to delete?</div>
+	<div style="display:none" id="IniDialog"></div> 
+	<div style="display:none" id="LoadingDialog">
+		<h1></h1>
+	  <img src="css\images\ajax-loader.gif">
+	</div> 
+	<div class="content">
+		<div id="left" class="ColL">
+		    <!--DIv de Grupo-->
+		    <div class="LTArriba">
+		        <label for="LsmTeam" id="LblMainControlsG" >Grupo</label>
+		        <select id="LsmTeam">
+		          <option value="Nada" selected>Todos</option>
+		        </select>
+		    </div>
+		    <!--DIv de Personaje y HP-->
+		    <div class="content2">
+		      <div id="LDvPJSlm" class="LTMIz">        
+		        <label for="LsmPJ" id="LblMainControlsP">Personaje</label>
+		        <select id="LsmPJ">
+		          <option value="Nuevo" selected>Nuevo</option>
+		        </select>
+		      </div>
+		      <div class="LTMDe">
+		        <label for="LInOTHPRest" id="LblMainControlsH" > HP Restante:</label>
+		        <input id="LInOTHPRest" name="LInOTHPRest" value="0" class="In50">          
+		      </div>
+		    </div>
+		    <!--DIv de Progress-->                        
+		    <div class="LTAba">
+		      <div id="LpgHP" class="Lpgb"></div>
+		    </div>
+		    <!--DIv de Tabs-->
+		    <div class="Tabconteiner">
+			      <div id="Ltabs">
+			        <ul>
+			          <li><a href="#tabs-8">Resumen</a></li>
+			          <li><a href="#tabs-1">Iniciat.</a></li>
+			          <li><a href="#tabs-2">BO</a></li>
+			          <li><a href="#tabs-3">BD</a></li>
+			          <li><a href="#tabs-7">TA</a></li>
+			          <li><a href="#tabs-4">Otros</a></li>
+			          <li><a href="#tabs-5">Datos</a></li>
+			          <li><a href="#tabs-9">Notas</a></li>
+			          <li><a href="#tabs-6">Acciones</a></li>
+			        </ul>
+			        <div id="tabs-1"><!--INI-->
+			          <table>
+			            <tr>
+			              <td  class="Lptcol1">Agi/Int: </td>
+			              <td  class="Lptcol3"><input id="LInIniAGI" name="LInIniAGI" placeholder="0" class="In50"></td>
+			              </td>
+			              <td></td>
+			              <td></td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol1">Pen.Act.:</td>
+			              <td class="Lptcol2"><input id="LInIniPenAct" name="LInIniPenAct" placeholder="0" class="In50"></td>
+			              <td class="Lptcol3">Magia:</td>
+			              <td class="Lptcol4"><input id="LInIniMagia" name="LInIniMagia" placeholder="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol1">Efectos:</td>
+			              <td class="Lptcol2"><input id="LInIniEfectos" name="LInIniEfectos" placeholder="0" class="In50"></td>
+			              <td class="Lptcol3">Otros:</td>
+			              <td class="Lptcol4"><input id="LInIniOtros" name="LInIniOtros" placeholder="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td colspan="2" class="Lptcol1">Total:</td>
+			              <td colspan="2" class="Lptcol3"><label id="LLaINTot">0</label></td>
+			            </tr>
+			          </table>
+			        </div>
+			        <div id="tabs-2"><!--BO-->
+			          <table>
+			            <tr>
+			              <td class="Lptcol1">Habilidad: </td>
+			              <td class="Lptcol2"><input id="LInBOHabilidad" name="LInBOHabilidad" placeholder="0" class="In50"></td>
+			              <td class="Lptcol3">BOaBD:</td>
+			              <td class="Lptcol4"><input id="LInBOaBD2" name="LInBOaBD2" placeholder="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol1">Pen.Act.:</td>
+			              <td class="Lptcol2"><input id="LInBOPenAct" name="LInBOPenAct" placeholder="0" class="In50"></td>
+			              <td class="Lptcol3">Magia:</td>
+			              <td class="Lptcol4"><input id="LInBOMagia" name="LInBOMagia" placeholder="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol1">Efectos:</td>
+			              <td class="Lptcol2"><input id="LInBOEfectos" name="LInBOEfectos" placeholder="0" class="In50"></td>
+			              <td class="Lptcol3">Otros:</td>
+			              <td class="Lptcol4"><input id="LInBOOtros" name="LInBOOtros" placeholder="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td colspan="2" class="Lptcol1">Total:</td>
+			              <td colspan="2" class="Lptcol3"><label id="LLaBOTot">0</label></td>
+			            </tr>
+			          </table>
+			        </div>
+			        <div id="tabs-3"><!--BD-->
+			          <table>
+			            <tr>
+			              <td class="Lptcol1">Agilidad:</td>
+			              <td class="Lptcol2"><input id="LInBDAGI" name="LInBDAGI" value="0" class="In50"></td>
+			              <td class="Lptcol3">BOaBD:</td>
+			              <td class="Lptcol4"><input id="LInBDBOaBD" name="LInBDBOaBD" value="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol1">Adrenal:</td>
+			              <td class="Lptcol2"><input id="LInBDAdrenal" name="LInBDAdrenal" value="0" class="In50"></td>
+			              <td class="Lptcol3">Escu:</td>
+			              <td class="Lptcol4"><input id="LInBDEscu" name="LInBDEscu" value="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol1">Pen.Act.:</td>
+			              <td class="Lptcol2"><input id="LInBDPenAct" name="LInBDPenAct" value="0" class="In50"></td>
+			              <td class="Lptcol3">Magia:</td>
+			              <td class="Lptcol4"><input id="LInBDMagia" name="LInBDMagia" value="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol1">Efectos:</td>
+			              <td class="Lptcol2"><input id="LInBDEfectos" name="LInBDEfectos" value="0" class="In50"></td>
+			              <td class="Lptcol3">Otros:</td>
+			              <td class="Lptcol4"><input id="LInBDOtros" name="LInBDOtros" value="0" class="In50"></td>
+			            </tr>
+			            <tr>
+			              <td colspan="2" class="Lptcol1">Total:</td>
+			              <td colspan="2" class="Lptcol3"><label id="LLaBDTot">0</label></td>
+			            </tr>
+			          </table>
+			        </div>
+			        <div id="tabs-4"> <!-- Otros -->
+			          <table>
+			            <tr>
+			              <td class="Lptcol2">
+			                <label for="LInOTMaxPP">Max. PP:</label>
+			                <input id="LInOTMaxPP" name="LInOTMaxPP" placeholder="0" class="In50">
+			              </td>
+			              <td class="Lptcol2">
+			                <label for="LInOTMaxSTA">Max. STA:</label>
+			                <input id="LInOTMaxSTA" name="LInOTMaxSTA" placeholder="0" class="In50">
+			              </td>
+			              <td class="Lptcol2">
+			                <label for="LInOTMaxAlim">Max. Alim.:</label>
+			                <input id="LInOTMaxAlim" name="LInOTMaxAlim" placeholder="0" class="In50">
+			              </td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol2">
+			                <label for="LInOTPPRest">PP Restante:</label>
+			                <input id="LInOTPPRest" name="LInOTPPRest" placeholder="0" class="In50">
+			              </td>
+			              <td class="Lptcol2">
+			                <label for="LInOTSTAR">STA Restante:</label>
+			                <input id="LInOTSTAR" name="LInOTSTAR" placeholder="0" class="In50">
+			              </td>
+			              <td class="Lptcol2">
+			                <label for="LInOTAlimRest">Alim. Restante:</label>
+			                <input id="LInOTAlimRest" name="LInOTAlimRest" placeholder="0" class="In50">
+			              </td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol2">
+			                <label for="LInOTMaxSueño">Max. Sueño.:</label>
+			                <input id="LInOTMaxSueño" name="LInOTMaxSueño" placeholder="0" class="In50">
+			              </td>
+			              <td class="Lptcol2">
+			                <label for="LInOTMaxHidra.">Max. Hidra..:</label>
+			                <input id="LInOTMaxHidra" name="LInOTMaxHidra" placeholder="0" class="In50">
+			              </td>
+			              <td class="Lptcol2" >
+			                <label for="LInOTMaxHP">Max. HP:</label>
+			                <input id="LInOTMaxHP" name="LInOTMaxHP" placeholder="0" class="In50">
+			              </td>
+			            </tr>
+			            <tr>
+			              <td class="Lptcol2">
+			                <label for="LInOTSueñoRest">Sueño. Restante:</label>
+			                <input id="LInOTSueñoRest" name="LInOTSueñoRest" placeholder="0" class="In50">
+			              </td>
+			              <td class="Lptcol2">
+			                <label for="LInOTHidraRest">Hidra. Restante:</label>
+			                <input id="LInOTHidraRest" name="LInOTHidraRest" placeholder="0" class="In50">
+			              </td>
+			              <td class="Lptcol3" >
+			                <label for="LLaHPRest">HP Restante:</label>
+			                <label id="LLaHPRest">0</label>
+			              </td>
+			            </tr>
+			          </table>
+			        </div>
+			        <div id="tabs-5"><!--Datos-->
+			          <div class="content">
+			            <div class="DColL">            
+			                <table>
+			                  <tr>
+			                      <td class="Lptcol1" colspan="2">
+			                        <label for="LInDDNombreJug">Nombre Jugador</label>
+			                        <input id="LInDDNombreJug" name="LInDDNombreJug" type="text">
+			                      </td>
+			                      <td class="Lptcol3">
+			                        <label for="LsmSimIni">Simular Iniciativa?</label>
+			        				<select id="LsmSimIni">
+							          <option value="NO" selected>NO</option>
+							          <option value="SI" >SI</option>
+							        </select>
+			                      </td>
+			                    </tr>
+			                    <tr>
+			                      <td class="Lptcol4" colspan="2">
+			                        <label for="Lselectmenu1">Profesion</label>
+			                        <select id="Lselectmenu1" class="Slmnu">
+			                          <option selected value="Guerrero">Guerrero</option>
+			                          <option value="GM">GM</option>
+			                          <option value="Gdada">Hacer Script para completar</option>
+			                          <!-- HAcer Script para completar-->
+			                        </select>
+			                      </td>
+			                      <td class="Lptcol2" >
+			                        <label for="LInDDExp">Experiencia:</label>
+			                        <input id="LInDDExp" name="LInDDExp" placeholder="0" class="In50">
+			                      </td>
+			                    </tr>
+			                    <tr>
+			                      <td class="Lptcol3" colspan="2">
+			                        <label for="LInDDTeam">Team:</label>
+			                        <!--<input id="LInDDTeam" name="LInDDTeam" class="In50">-->
+			                        <div>
+			                          <input id="LInDDTeam" title="type &quot;a&quot;">
+			                        </div>
+			                      </td>
+			                      <td class="Lptcol2" >
+			                        <label for="LInDDNivel">Nivel:</label>
+			                        <input id="LInDDNivel" name="LInDDNivel" placeholder="0" class="In50">
+			                      </td>
+			                    </tr>
+			                </table>
+			            </div>
+			          </div>
+			        </div>             
+			        <div id="tabs-6"><!--Acciones-->
+			          <div class="content">
+			            <div class="AColL">               
+			              <label for="LNewPJName">Nuevo Nombre</label>
+			              <input id="LNewPJName" type="text" name="LNewPJName" placeholder="Nuevo Nombre"><br>
+			              <label for="LInCode">Code</label><br>
+			              <input id="LInCode" type="text" name="LInCode"><br>
+			            </div>
+			            <div class="AColR">
+			              <input type="button" value="Guardar" id="LGuardar"></input><br>
+			              <input type="button" value="Fill Inpunts" id="Fill" disabled="disabled"></input><br>
+			              <input type="button" value="Borrar" id="LBorrar"></input><br>
+			            </div>
+			          </div>
+			        </div>
+			        <div id="tabs-7"> <!-- TA -->
+			            <table>
+			              <tr>
+			                <td class="Lptcol1">
+			                  <label for="LInTACasco">Casco:</label>
+			                  <input id="LInTACasco" name="LInTACasco" placeholder="0" class="In50">
+			                </td>
+			                <td class="Lptcol2">
+			                  <label for="LInTAPeto">Peto</label>
+			                  <input id="LInTAPeto" name="LInTAPeto" placeholder="0" class="In50">
+			                </td>
+			                <td class="Lptcol3">
+			                  <label for="LInTAEfectos">Efectos:</label>
+			                  <input id="LInTAEfectos" name="LInTAEfectos" placeholder="0" class="In50">
+			                </td>
+			              </tr>
+			              <tr>
+			                <td class="Lptcol1">
+			                  <label for="LInTABrazales">Brazales:</label>
+			                  <input id="LInTABrazales" name="LInTABrazales" placeholder="0" class="In50">
+			                </td>
+			                <td class="Lptcol2">
+			                  <label for="LInTAGuantes">Guantes:</label>
+			                  <input id="LInTAGuantes" name="LInTAGuantes" placeholder="0" class="In50">
+			                </td>
+			                <td class="Lptcol3">
+			                  <label for="LInTAOtros">Otros:</label>
+			                  <input id="LInTAOtros" name="LInTAOtros" placeholder="0" class="In50">
+			                </td>
+			              </tr>
+			              <tr>
+			                <td class="Lptcol1">
+			                  <label for="LInTAGrebas">Grebas:</label>
+			                  <input id="LInTAGrebas" name="LInTAGrebas" placeholder="0" class="In50">
+			                </td>
+			                <td class="Lptcol2">
+			                  <label for="LInTABotas">Botas:</label>
+			                  <input id="LInTABotas" name="LInTABotas" placeholder="0" class="In50">
+			                </td>
+			                <td class="Lptcol3">
+			                  <label for="LInTAMagia">Magia:</label>
+			                  <input id="LInTAMagia" name="LInTAMagia" placeholder="0" class="In50">
+			                </td>
+			              </tr>
+			              <tr>
+			                <td class="Lptcol1">
+			                  <label for="LInTAEscudo">Escudo:</label>
+			                  <input id="LInTAEscudo" name="LInTAEscudo" placeholder="0" class="In50">
+			                </td>
+			                <td class="Lptcol2" >
+			                  <label for="LInTATotal">Total TA:</label>
+			                </td>
+			                <td class="Lptcol3" ><label id="LLaTATot">0</label></td>
+			              </tr>
+			            </table>
+			        </div>
+			        <div id="tabs-8"><!--Resumen-->
+			          <div class="content">
+			            <div id="ResColL">               
+			              <img id="ResuImg" src="images/Anillo.gif">
+			            </div>
+			            <div id="ResColR">
+			              <table>
+			                <tr>
+			                  <td class="Lptcol1">
+			                    <label>Iniciativa :</label>
+			                  </td>
+			                  <td class="Lptcol2">
+			                    <label id="LLaREIni">--</label>
+			                  </td>
+			                </tr>
+			                <tr>
+			                  <td class="Lptcol1">
+			                    <label>BO :</label>
+			                  </td>
+			                  <td class="Lptcol2">
+			                    <label id="LLaREBO">--</label>
+			                  </td>
+			                </tr>
+			                <tr>
+			                  <td class="Lptcol1">
+			                    <label>BD :</label>
+			                  </td>
+			                  <td class="Lptcol2">
+			                    <label id="LLaREBD">--</label>
+			                  </td>
+			                </tr>
+			                <tr>
+			                  <td class="Lptcol1">
+			                    <label>TA :</label>
+			                  </td>
+			                  <td class="Lptcol2">
+			                    <label id="LLaRETA">--</label>
+			                  </td>
+			                </tr>
+			                <tr>
+			                  <td class="Lptcol1">
+			                    <label>PP :</label>
+			                  </td>
+			                  <td class="Lptcol2">
+			                    <label id="LLaREPP">--</label>
+			                  </td>
+			                </tr>
+			                <tr>
+			                  <td class="Lptcol1">
+			                    <label>STA :</label>
+			                  </td>
+			                  <td class="Lptcol2">
+			                    <label id="LLaRESTA">--</label>
+			                  </td>
+			                </tr>
+			              </table>
+			            </div>
+			          </div>
+			        </div>
+			        <div id="tabs-9"><!--Notas-->
+			          <textarea id="LTeNONotes" class="textarea4">...</textarea>
+			          <!-- -->
+			        </div>
+			      </div>
+		    </div>
+		    <!--DIv de Efectos-->
+		    <div class="content2">
+		      <div class="CellDisplayLeft">
+		        <label for="LsmPJ" id="LblMainControlsP">Estado :  Efectos :</label>
+		      </div>
+		      <div class="CellDisplayRight" id="LDiForIcons">
+		        <!--<img  id="icon1" class="icon">-->
+		      </div>
+		    </div>
+		    <table id="LEfectTable" title="Estado">
+		        <thead id="LETableHead">
+		          <td id="et1">Tipo</td>
+		          <td id="et4">Nota</td>
+		          <td id="et2">Valor</td>
+		          <td id="et3">UDM</td>
+		        </thead>
+		    </table>
+		</div> 
+		<!--Columna del centro-->
+		<div id="center" class="Col">
+		    <textarea id="mtt2" readonly="true">Control</textarea> 
+		    <div id="Control" class="content2"><!--Aca va el Control Panel-->
+			</div>
+			<div class="CellDisplay50porcentLeft">
+			    <label class="Titulo2">Orden de Turnos</label>
+			    <table id="OrderTable" class="CIT">
+			      <thead id="OTHead1">
+			        <td id="ft1" >Pesonaje</td>
+			        <!--<td id="ft2" >Estado</td>-->
+			        <td id="ft4" >Total</td>
+			        <td id="ft5" >Nº</td>
+			      </thead>
+			      <tbody id="CTBody">
+			        
+			      </tbody>
+			    </table>
+		    </div>
+		    <div class="CellDisplay50porcentRight">
+			    <label class="Titulo2">Lista de Espera</label>
+			    <table id="EsperaTable" class="CIT">
+			      <thead id="OTHead2">
+			        <td id="ft6" >Pesonaje</td>
+			        <!--<td id="ft7" >Estado</td>-->
+			        <td id="ft8" >Total</td>
+			        <td id="ft9" >Nº</td>
+			      </thead>
+			      <tbody id="OTBody">
+			        
+			      </tbody>
+			    </table>
+			</div>
+		  </div>
+<!--////////////////////////////////////////////////////////////////////////-->
+  <div id="right" class="ColR">
+    <!--DIv de Grupo-->
+    <div class="LTArriba">
+        <label for="RsmTeam" id="RLblMainControlsG" >Grupo</label>
+        <select id="RsmTeam">
+          <option value="Nada" selected>Todos</option>
+        </select>
+    </div>
+	<!--DIv de Personaje y HP-->
+    <div class="content2">
+      <div id="RDvPJSlm" class="LTMIz">        
+        <label for="RsmPJ" id="RLblMainControlsP">Personaje</label>
+        <select id="RsmPJ">
+          <option value="Nuevo" selected>Nuevo</option>
+        </select>
+      </div>
+      <div class="LTMDe">
+        <label for="RInOTHPRest" id="RLblMainControlsH" > HP Restante:</label>
+        <input id="RInOTHPRest" name="RInOTHPRest" value="0" class="In50">          
+      </div>
+    </div>
+	<!--DIv de Progress-->                        
+    <div class="LTAba">
+      <div id="RpgHP" class="Lpgb"></div>
+    </div>
+	<!--DIv de Tabs-->
+    <div class="Tabconteiner">
+      <div id="Rtabs">
+        <ul>
+          <li><a href="#tabs-R8">Resumen</a></li>
+          <li><a href="#tabs-R1">Iniciat.</a></li>
+          <li><a href="#tabs-R2">BO</a></li>
+          <li><a href="#tabs-R3">BD</a></li>
+          <li><a href="#tabs-R7">TA</a></li>
+          <li><a href="#tabs-R4">Otros</a></li>
+          <li><a href="#tabs-R5">Datos</a></li>
+          <li><a href="#tabs-R9">Notas</a></li>
+          <li><a href="#tabs-R6">Acciones</a></li>
+        </ul>
+        <div id="tabs-R1"><!--INI-->
+          <table>
+            <tr>
+              <td  class="Lptcol1">Agi/Int: </td>
+              <td  class="Lptcol3"><input id="RInIniAGI" name="RInIniAGI" placeholder="0" class="In50"></td>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="Lptcol1">Pen.Act.:</td>
+              <td class="Lptcol2"><input id="RInIniPenAct" name="RInIniPenAct" placeholder="0" class="In50"></td>
+              <td class="Lptcol3">Magia:</td>
+              <td class="Lptcol4"><input id="RInIniMagia" name="RInIniMagia" placeholder="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td class="Lptcol1">Efectos:</td>
+              <td class="Lptcol2"><input id="RInIniEfectos" name="RInIniEfectos" placeholder="0" class="In50"></td>
+              <td class="Lptcol3">Otros:</td>
+              <td class="Lptcol4"><input id="RInIniOtros" name="RInIniOtros" placeholder="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="Lptcol1">Total:</td>
+              <td colspan="2" class="Lptcol3"><label id="RLaINTot">0</label></td>
+            </tr>
+          </table>
+        </div>
+        <div id="tabs-R2"><!--BO-->
+          <table>
+            <tr>
+              <td class="Lptcol1">Habilidad: </td>
+              <td class="Lptcol2"><input id="RInBOHabilidad" name="RInBOHabilidad" placeholder="0" class="In50"></td>
+              <td class="Lptcol3">BOaBD:</td>
+              <td class="Lptcol4"><input id="RInBOaBD2" name="RInBOaBD2" placeholder="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td class="Lptcol1">Pen.Act.:</td>
+              <td class="Lptcol2"><input id="RInBOPenAct" name="RInBOPenAct" placeholder="0" class="In50"></td>
+              <td class="Lptcol3">Magia:</td>
+              <td class="Lptcol4"><input id="RInBOMagia" name="RInBOMagia" placeholder="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td class="Lptcol1">Efectos:</td>
+              <td class="Lptcol2"><input id="RInBOEfectos" name="RInBOEfectos" placeholder="0" class="In50"></td>
+              <td class="Lptcol3">Otros:</td>
+              <td class="Lptcol4"><input id="RInBOOtros" name="RInBOOtros" placeholder="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="Lptcol1">Total:</td>
+              <td colspan="2" class="Lptcol3"><label id="RLaBOTot">0</label></td>
+            </tr>
+          </table>
+        </div>
+        <div id="tabs-R3"><!--BD-->
+          <table>
+            <tr>
+              <td class="Lptcol1">Agilidad:</td>
+              <td class="Lptcol2"><input id="RInBDAGI" name="RInBDAGI" value="0" class="In50"></td>
+              <td class="Lptcol3">BOaBD:</td>
+              <td class="Lptcol4"><input id="RInBDBOaBD" name="RInBDBOaBD" value="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td class="Lptcol1">Adrenal:</td>
+              <td class="Lptcol2"><input id="RInBDAdrenal" name="RInBDAdrenal" value="0" class="In50"></td>
+              <td class="Lptcol3">Escu:</td>
+              <td class="Lptcol4"><input id="RInBDEscu" name="RInBDEscu" value="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td class="Lptcol1">Pen.Act.:</td>
+              <td class="Lptcol2"><input id="RInBDPenAct" name="RInBDPenAct" value="0" class="In50"></td>
+              <td class="Lptcol3">Magia:</td>
+              <td class="Lptcol4"><input id="RInBDMagia" name="RInBDMagia" value="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td class="Lptcol1">Efectos:</td>
+              <td class="Lptcol2"><input id="RInBDEfectos" name="RInBDEfectos" value="0" class="In50"></td>
+              <td class="Lptcol3">Otros:</td>
+              <td class="Lptcol4"><input id="RInBDOtros" name="RInBDOtros" value="0" class="In50"></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="Lptcol1">Total:</td>
+              <td colspan="2" class="Lptcol3"><label id="RLaBDTot">0</label></td>
+            </tr>
+          </table>
+        </div>
+        <div id="tabs-R4"> <!-- Otros -->
+          <table>
+            <tr>
+              <td class="Lptcol2">
+                <label for="RInOTMaxPP">Max. PP:</label>
+                <input id="RInOTMaxPP" name="RInOTMaxPP" placeholder="0" class="In50">
+              </td>
+              <td class="Lptcol2">
+                <label for="RInOTMaxSTA">Max. STA:</label>
+                <input id="RInOTMaxSTA" name="RInOTMaxSTA" placeholder="0" class="In50">
+              </td>
+              <td class="Lptcol2">
+                <label for="RInOTMaxAlim">Max. Alim.:</label>
+                <input id="RInOTMaxAlim" name="RInOTMaxAlim" placeholder="0" class="In50">
+              </td>
+            </tr>
+            <tr>
+              <td class="Lptcol2">
+                <label for="RInOTPPRest">PP Restante:</label>
+                <input id="RInOTPPRest" name="RInOTPPRest" placeholder="0" class="In50">
+              </td>
+              <td class="Lptcol2">
+                <label for="RInOTSTAR">STA Restante:</label>
+                <input id="RInOTSTAR" name="RInOTSTAR" placeholder="0" class="In50">
+              </td>
+              <td class="Lptcol2">
+                <label for="RInOTAlimRest">Alim. Restante:</label>
+                <input id="RInOTAlimRest" name="RInOTAlimRest" placeholder="0" class="In50">
+              </td>
+            </tr>
+            <tr>
+              <td class="Lptcol2">
+                <label for="RInOTMaxSueño">Max. Sueño.:</label>
+                <input id="RInOTMaxSueño" name="RInOTMaxSueño" placeholder="0" class="In50">
+              </td>
+              <td class="Lptcol2">
+                <label for="RInOTMaxHidra.">Max. Hidra..:</label>
+                <input id="RInOTMaxHidra" name="RInOTMaxHidra" placeholder="0" class="In50">
+              </td>
+              <td class="Lptcol2" >
+                <label for="RInOTMaxHP">Max. HP:</label>
+                <input id="RInOTMaxHP" name="RInOTMaxHP" placeholder="0" class="In50">
+              </td>
+            </tr>
+            <tr>
+              <td class="Lptcol2">
+                <label for="RInOTSueñoRest">Sueño. Restante:</label>
+                <input id="RInOTSueñoRest" name="RInOTSueñoRest" placeholder="0" class="In50">
+              </td>
+              <td class="Lptcol2">
+                <label for="RInOTHidraRest">Hidra. Restante:</label>
+                <input id="RInOTHidraRest" name="RInOTHidraRest" placeholder="0" class="In50">
+              </td>
+              <td class="Lptcol3" >
+                <label for="LLaHPRest">HP Restante:</label>
+                <label id="LLaHPRest">0</label>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="tabs-R5"><!--Datos-->
+          <div class="content">
+            <div class="DColL">            
+                <table>
+                  <tr>
+                      <td class="Lptcol1" colspan="2">
+                        <label for="RInDDNombreJug">Nombre Jugador</label>
+                        <input id="RInDDNombreJug" name="RInDDNombreJug" type="text">
+                      </td>
+                      <td class="Lptcol3">
+                        <label for="RsmSimIni">Simular Iniciativa?</label>
+		        				<select id="RsmSimIni">
+						          <option value="NO" selected>NO</option>
+						          <option value="SI" >SI</option>
+						        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="Lptcol4" colspan="2">
+                        <label for="Rselectmenu1">Profesion</label>
+                        <select id="Rselectmenu1" class="Slmnu">
+                          <option selected value="Guerrero">Guerrero</option>
+                          <option value="GM">GM</option>
+                          <option value="Gdada">Hacer Script para completar</option>
+                          <!-- HAcer Script para completar-->
+                        </select>
+                      </td>
+                      <td class="Lptcol2" >
+                        <label for="RInDDExp">Experiencia:</label>
+                        <input id="RInDDExp" name="RInDDExp" placeholder="0" class="In50">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="Lptcol3" colspan="2">
+                        <label for="RInDDTeam">Team:</label>
+                        <!--<input id="RInDDTeam" name="RInDDTeam" class="In50">-->
+                        <div>
+                          <input id="RInDDTeam" title="type &quot;a&quot;">
+                        </div>
+                      </td>
+                      <td class="Lptcol2" >
+                        <label for="RInDDNivel">Nivel:</label>
+                        <input id="RInDDNivel" name="RInDDNivel" placeholder="0" class="In50">
+                      </td>
+                    </tr>
+                </table>
+            </div>
+          </div>
+        </div>             
+        <div id="tabs-R6"><!--Acciones-->
+          <div class="content">
+            <div class="AColL">               
+              <label for="RNewPJName">Nuevo Nombre</label>
+              <input id="RNewPJName" type="text" name="RNewPJName" placeholder="Nuevo Nombre"><br>
+              <label for="RInCode">Code</label><br>
+              <input id="RInCode" type="text" name="RInCode"><br>
+            </div>
+            <div class="AColR">
+              <input type="button" value="Guardar" id="RGuardar"></input><br>
+              <input type="button" value="Fill Inpunts" id="RFill" disabled="disabled"></input><br>
+              <input type="button" value="Borrar" id="RBorrar"></input><br>
+            </div>
+          </div>
+        </div>
+        <div id="tabs-R7"> <!-- TA -->
+            <table>
+              <tr>
+                <td class="Lptcol1">
+                  <label for="RInTACasco">Casco:</label>
+                  <input id="RInTACasco" name="RInTACasco" placeholder="0" class="In50">
+                </td>
+                <td class="Lptcol2">
+                  <label for="RInTAPeto">Peto</label>
+                  <input id="RInTAPeto" name="RInTAPeto" placeholder="0" class="In50">
+                </td>
+                <td class="Lptcol3">
+                  <label for="RInTAEfectos">Efectos:</label>
+                  <input id="RInTAEfectos" name="RInTAEfectos" placeholder="0" class="In50">
+                </td>
+              </tr>
+              <tr>
+                <td class="Lptcol1">
+                  <label for="RInTABrazales">Brazales:</label>
+                  <input id="RInTABrazales" name="RInTABrazales" placeholder="0" class="In50">
+                </td>
+                <td class="Lptcol2">
+                  <label for="RInTAGuantes">Guantes:</label>
+                  <input id="RInTAGuantes" name="RInTAGuantes" placeholder="0" class="In50">
+                </td>
+                <td class="Lptcol3">
+                  <label for="RInTAOtros">Otros:</label>
+                  <input id="RInTAOtros" name="RInTAOtros" placeholder="0" class="In50">
+                </td>
+              </tr>
+              <tr>
+                <td class="Lptcol1">
+                  <label for="RInTAGrebas">Grebas:</label>
+                  <input id="RInTAGrebas" name="RInTAGrebas" placeholder="0" class="In50">
+                </td>
+                <td class="Lptcol2">
+                  <label for="RInTABotas">Botas:</label>
+                  <input id="RInTABotas" name="RInTABotas" placeholder="0" class="In50">
+                </td>
+                <td class="Lptcol3">
+                  <label for="RInTAMagia">Magia:</label>
+                  <input id="RInTAMagia" name="RInTAMagia" placeholder="0" class="In50">
+                </td>
+              </tr>
+              <tr>
+                <td class="Lptcol1">
+                  <label for="RInTAEscudo">Escudo:</label>
+                  <input id="RInTAEscudo" name="RInTAEscudo" placeholder="0" class="In50">
+                </td>
+                <td class="Lptcol2" >
+                  <label for="RInTATotal">Total TA:</label>
+                </td>
+                <td class="Lptcol3" ><label id="RLaTATot">0</label></td>
+              </tr>
+            </table>
+        </div>
+        <div id="tabs-R8"><!--Resumen-->
+          <div class="content">
+            <div id="ResColL">               
+              <img id="RResuImg" src="images/Anillo.gif">
+            </div>
+            <div id="ResColR">
+              <table>
+                <tr>
+                  <td class="Lptcol1">
+                    <label>Iniciativa :</label>
+                  </td>
+                  <td class="Lptcol2">
+                    <label id="RLaREIni">--</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="Lptcol1">
+                    <label>BO :</label>
+                  </td>
+                  <td class="Lptcol2">
+                    <label id="RLaREBO">--</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="Lptcol1">
+                    <label>BD :</label>
+                  </td>
+                  <td class="Lptcol2">
+                    <label id="RLaREBD">--</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="Lptcol1">
+                    <label>TA :</label>
+                  </td>
+                  <td class="Lptcol2">
+                    <label id="RLaRETA">--</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="Lptcol1">
+                    <label>PP :</label>
+                  </td>
+                  <td class="Lptcol2">
+                    <label id="RLaREPP">--</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="Lptcol1">
+                    <label>STA :</label>
+                  </td>
+                  <td class="Lptcol2">
+                    <label id="RLaRESTA">--</label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="tabs-R9"><!--Notas-->
+          <textarea id="RTeNONotes" class="textarea4">...</textarea>
+        </div>
+      </div>
+    </div>
+	<!--DIv de Efectos-->
+    <div class="content2">
+      <div class="CellDisplayLeft">
+        <label for="RsmPJ" id="LblMainControlsP">Estado :  Efectos :</label>
+      </div>
+      <div class="CellDisplayRight" id="RDiForIcons">
+        <img  id="icon1" class="icon">
+      </div>
+    </div>
+      <table id="REfectTable" title="Estado">
+        <thead id="RETableHead">
+          <td id="et1">Tipo</td>
+          <td id="et4">Nota</td>
+          <td id="et2">Valor</td>
+          <td id="et3">UDM</td>
+        </thead>
+      </table>
+  </div>
+  </div>
+</div>
+<script type="text/javascript" src="js\mjs.js"> </script>
+<script type="text/javascript" src="js\Func.js"></script>
+<script type="text/javascript" src="js\data.js"></script>
+<script type="text/javascript" src="js\Ctrls.js"></script>
+</body>
+</html>

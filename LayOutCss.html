@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+html,body{
+    height:100%;    
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+div{
+    margin:0;
+    border:0;
+}
+
+textarea {
+    margin:0;
+    border:0;
+    padding:0;
+    height:100%;
+    width:100%;
+}
+
+.content{
+    display:table;
+    width:100%;
+    border-collapse:separate;
+    height:80%;
+}
+
+.Col{
+    display:table-cell;
+    width:30%;
+    height:100%;
+}
+
+#header,#footer{
+    height:10%;
+    position:relative;
+    z-index:1;
+}
+
+</style>
+</head>
+<body>
+<div id="header"><textarea style="background-color:orange;">H Just a test</textarea></div>
+<div class="content">
+    <div id="left" class="Col"><textarea style="background-color:lightskyblue;">A Just a test</textarea></div>
+    <div id="center" class="Col"><textarea style="background-color:green;">B Just a test</textarea></div>
+    <div id="right" class="Col"><textarea style="background-color:lime;">C Just a test</textarea></div>
+</div>
+<div id="footer"><textarea style="background-color:yellow;">F Just a test</textarea></div>
+</body>
+</html>

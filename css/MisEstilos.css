@@ -1,0 +1,593 @@
+/*td.Efectitles{
+	color: rgb(54,100,224);
+	font-size: 120%;
+	background-color: #505050;
+}*/
+
+html{
+	height:100%;    
+    margin:0;
+    padding:0;
+    border:0;
+}
+body{
+	/*background-color: #104040;*/
+    height:100%;    
+    margin:0;
+    padding:0;
+    border:0;
+    background-image: url("images/FondoVerde.jpg");
+	background-position: center;
+}
+textarea.fill{
+    margin:0;
+    border:0;
+    padding:0;
+    height:100%;
+    width:100%;
+    max-width: 100%;
+    background-color: transparent;
+}
+/* Cabeceras de las tablas de Efectos de los 2 lados*/
+#et1,#et2,#et3,#et4{
+	text-align: center;
+	color: rgb(40,50,224);
+	font-size: 140%;
+	background-color: #707070;
+	border-collapse:collapse;
+}
+
+#center{text-align: center;}
+.TFTCol1{
+	width: 70%;
+	max-width: 70%;
+}
+/* Botones */
+.FTbtn{
+	font-weight:bold;
+	width: 90%;
+	max-width: 90%;
+	margin: 5px;
+	/*background-color: #000000;*/
+}
+.ui-button .ui-button-text{	font-size: 70%;}
+/* Divs para layout General*/
+.content{
+    display:table;
+    width:100%;
+    max-width: 100%;
+    border-collapse:separate;
+    height:80%;
+}
+.ColL{
+    display:table-cell;
+    width:32%;
+    max-width: 32%;
+    height:100%;
+    font-size: 100%;	
+}
+.Col{
+    display:table-cell;
+    width:36%;
+    max-width: 36%;
+    height:100%;
+    /*background-color: #305030;*/  
+}
+.ColR{
+    display:table-cell;
+    width:32%;
+    max-width: 32%;
+    height:100%;
+    font-size: 100%;
+}
+/*Div interno en Tab-Datos */
+/* Div para layout General*/
+/*.DColL{
+    display:table-cell;
+    width:40%;
+    height:100%;	
+}
+.DColM{
+    display:block;
+    width:40%;
+    height:40%;
+    background-color: #305030;  
+}
+.DColR{
+    display:table-cell;
+    width:40%;
+    height:40%;    
+}*/
+/*Tabs Acciones*/
+.AColL{
+    display:table-cell;
+    width:70%;
+    max-width: 70%;
+    height:100%;	
+}
+.AColR{
+    display:table-cell;
+    width:30%;
+    max-width: 30%;
+    height:100%;  
+}
+/* Lay Out Cabecera de Columnas Grandes: Zona Grupo ,Personaje,HPR*/
+.content2{
+    display:table;
+    width:100%;
+    max-width: 100%;
+    border-collapse:separate;
+    height:50px;
+    font-size: 80%;
+}
+.LTArriba{
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height:70px;
+	font-size: 80%;
+	/*clear: both;*/
+}
+.LTMIz{
+	display: table-cell;
+	width: 65%;
+	max-width: 65%;
+	height:100%;
+	float: left;
+	font-size: 100%;
+}
+.LTMDe{
+	display: table-cell;
+	width: 30%;
+	max-width: 30%;
+	height:100%;
+	float: right;
+	font-size: 100%;
+}
+.LTMIz2{
+	display: table-cell;
+	width: 42%;
+	max-width: 42%;
+	height:100%;
+	float: left;
+	font-size: 100%;
+}
+.LTMDe2{
+	display: table-cell;
+	width: 58%;
+	max-width: 58%;
+	height:100%;
+	float: left;
+	font-size: 100%;
+}
+.LTAba{
+	/*display: table-cell;
+	width: 100%;
+	height:30%;*/
+	clear: both;
+}
+#LsmTeam,#RsmTeam{
+	width: 100%;
+	max-width: 100%;
+	line-height: 0.8;
+	
+}
+#LsmSimIni,#RsmSimIni{
+	width: 50%;
+	line-height: 0.8;
+	
+}
+#LblMainControlsG,#RLblMainControlsG{
+	font-size: 140%;
+	font-weight: bold;
+	text-align: center;
+	color: #c8c8c8;
+}
+#LblMainControlsP,#RLblMainControlsP{
+	font-size: 155%;
+	font-weight: bold;
+	text-align: center;
+	color: #c8c8c8;
+}
+#LblMainControlsH,#RLblMainControlsH{
+	font-size: 120%;
+	font-weight: bold;
+	text-align: center;
+	color: #c8c8c8;
+}
+/*Divs de Estado/Efectos*/
+div.CellDisplayLeft{
+	display: table-cell;
+	width: 20%;
+	max-width: 20%;
+	height:100%;
+	float: left;
+	font-size: 90%;
+}
+div.CellDisplayRight{
+	display: table-cell;
+	width: 80%;
+	max-width: 80%;
+	height:100%;
+	float: left;
+	font-size: 130%;
+}
+/* Control*/
+#mtt2{
+	height: 35px;
+	text-align: center;
+	color: #c8c8c8;
+	font-size: 200%;
+	font-weight: bold;
+	border: none;
+	background: transparent;
+}
+#header,#footer{
+    height:10%;
+    position:relative;
+    z-index:1;
+}
+/*Fin Layout*/
+/*ProgressBar*/
+.HPpgb{
+	width: 100%;
+	max-width: 100%;
+}
+/*Left Personaje Table*/
+#Lpt{
+	width: 100%;
+	max-width: 100%;
+	margin: 0px;
+	border-spacing: 4px;
+    border-collapse: separate;
+}
+.Lptcol1{
+	width: 25%;
+	font-size: 90%;
+	color: rgb(54,100,224);
+	text-align: center;
+}
+.Lptcol2{
+	width: 25%;
+	max-width: 25%;
+	font-size: 90%;
+	color: rgb(54,100,224);
+	text-align: center;
+}
+.Lptcol3{
+	width: 25%;
+	max-width: 25%;
+	font-size: 90%;
+	color: rgb(54,100,224);
+	text-align: center;
+}
+.Lptcol4{
+	width: 40%;
+	max-width: 40%;
+	font-size: 90%;
+	color: rgb(54,100,224);
+	text-align: center;
+}
+#Lselectmenu1,#Rselectmenu1{
+	width: 100%;
+	max-width: 100%;
+}
+#LsmPJ,#RsmPJ{
+	font-size: 80%;
+	width: 100%;
+	max-width: 100%;
+}
+#Guardar,#Fill,#Borrar,#RGuardar,#RFill,#RBorrar{
+	margin: 3px ;
+	font-size: 110%;
+	font-weight: bold;
+}
+/*Fin Left Personaje TAble*/
+/*Left Efectos Table*/
+#LEfectTable,#REfectTable{
+	font-size: 70%;
+	width: 100%;
+	max-width: 100%;
+	margin: 0px;
+	border-spacing: 2px;
+    border-collapse: separate;
+}
+.LEtcol1{
+	width: 34%;
+	max-width: 34%;
+	font-size: 90%;
+	color: rgb(54,100,224);
+	text-align: center;
+}
+.LEtcol2{
+	width: 29%;
+	max-width: 29%;
+	font-size: 80%;
+	color: rgb(54,100,224);	
+	text-align: center;
+}
+.LEtcol3{
+	width: 17%;
+	max-width: 17%;
+	font-size: 90%;
+	color: rgb(54,100,224);
+	text-align: center;
+}
+.LEtcol4{
+	width: 20%;
+	max-width: 20%;
+	font-size: 90%;
+	color: rgb(54,100,224);
+	text-align: center;
+}
+.FXSlm{
+	font-size: 80%;
+	width: 100%;
+	max-width: 175px;
+}
+.ui-menu-item{font-size: 80%;}
+#LETCabecera{
+	height: 30px;
+	width: 100%;
+	max-width: 100%;
+	background: transparent;
+	text-align: left;
+	color: #c8c8c8;
+	font-size: 180%;
+	font-weight: bold;
+	border-collapse:collapse;
+}
+/*Fin Tabla Efectos*/
+/*Seccion central*/
+#CLaDate{
+	width: 100%;
+	max-width: 100%;
+	/*text-align: center;*/
+	color: rgb(40,50,224);
+	font-size: 130%;
+	background-color: #707070;	
+}
+.CIT{
+	text-align: center;
+	color: #c8c8c8;
+	background: transparent;
+	border-collapse:collapse;
+}
+/*Tabla Control General*/
+td.CITCN{
+	/*font-size: 140%;*/
+	width: 25%;
+	max-width: 25%;
+}
+td.CITCE{
+	/*font-size: 140%;*/
+	width: 35%;
+	max-width: 35%;
+}
+td.CITCI{
+	/*font-size: 140%;*/
+	width: 15%;
+	max-width: 15%;
+}
+td.CITCT{
+	/*font-size: 140%;*/
+	width: 15%;
+	max-width: 15%;
+}
+td.CITCO{
+	/*font-size: 140%;*/
+	width: 10%;
+	max-width: 10%;
+}
+thead{
+	width: 100%;
+	max-width: 100%;
+	border-collapse:collapse;
+	text-align: center;
+	color: rgb(40,50,224);
+	font-size: 130%;
+	background-color: #707070;
+}
+#tdFecha,#tdTurno{
+	border-collapse:collapse;
+	text-align: center;
+	color: rgb(40,50,224);
+	font-size: 130%;
+	background-color: #707070;
+}
+textarea.fill{
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+}
+td.PersLabel{
+	color: rgb(54,100,224);
+	font-size: 110%;	
+}
+.In50{
+	width: 50px;
+	max-width: 100%;
+	text-align: center;
+}
+.In52{
+	width: 52px;
+	max-width: 100%;
+	text-align: center;
+}
+.In48{
+	width: 30%;
+	max-width: 30%;
+	text-align: center;
+	font-size: 70%;
+}
+#LInDDExp,#RInDDExp{
+	width: 100%;
+	max-width: 100%;
+}
+#LInDDTeam,#LInDDNombreJug,#Lselectmenu1,#RInDDTeam,#RInDDNombreJug,#Rselectmenu1{
+	width: 100%;
+	max-width: 100%;
+}
+#LInOTHPRest,#RInOTHPRest{
+	width: 100%;
+	max-width: 90%;
+	font-size: 100%;
+	margin-right: 0;
+}
+#ResColL{
+	display: table-cell;
+	width: 50%;
+	max-width: 50%;
+	float: left;
+}
+#ResColR{
+	display: table-cell;
+	width: 50%;
+	max-width: 50%;
+	float: left;
+}
+#ResuImg,#RResuImg {
+	background-color: #c8c8c8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 80%;
+    max-width: 80%;
+}
+div.Tabconteiner{
+	width: 100%;
+	max-width: 100%;
+	font-size: 80%;
+}
+ul.ui-tabs-nav{
+	font-size: 80%;
+}
+.textarea4 {
+	resize: none;
+	width: 100%;
+	max-width: 100%;
+	height: 100px;
+	background-color: #f0f0f0;
+	border: 1px solid #000000;	
+}
+.OtherPrettyInputs{
+	display: inline-block;
+	padding: 0;
+	border: none;
+    background: none;
+    color: inherit;
+	margin-top: 0.2em;
+	margin-right: 0.4em;
+	margin-bottom: 0.2em;
+	margin-left: .4em;
+	font: 13.3333px Arial;
+	text-align: center;
+}
+#CInDate{
+	width: 100%;
+	max-width: 100%;
+}
+#RSlX,#RSlY{
+	width: 90%;
+	max-width: 90%;
+	margin-left: 15px;
+}
+#RLaXa,#RLaXb,#RLaXw,#RLaYa,#RLaYb,#RLaYw,#RLaY,#RLaX,#RLaImg{
+	color: #c8c8c8;
+	font-size: 140%;
+}
+#RLaY,#RLaX{text-align: center;}
+#IconTest{
+	width: 50px;
+    height: 50px;
+    border: none;
+    background: url("images/FX15p.png") no-repeat; /**/
+}
+#RInImgW,#RInImgH{
+	width: 50px;
+	font-size: 80%;
+}
+
+.FXIcon{
+	display: block;
+	float: left;
+	border-style: none;
+}
+.HLTr{
+	border-collapse:collapse;
+	background: -webkit-linear-gradient(left, rgba(12,37,201,1) 0%, rgba(12,37,201,0.8) 20%, rgba(12,37,201,0.2) 80%, rgba(12,37,201,0) 100%); 
+    background-attachment:fixed;
+}
+.WaitingOverLay{
+	display: block;
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background-color: #000;
+    background: url("images/ajax-loader.gif") no-repeat;
+    z-index: 10000;
+}
+.img-hor {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+#tdLArrow,#tdRArrow{
+	height: 115px;
+}
+#LArrow,#RArrow{
+	width: 113px;
+	height: 113px;
+	border: 0px;
+	background-position: center;
+}
+#tdPjName{
+	text-align: center;
+	color: #c8c8c8;
+	font-size: 150%;
+	font-weight: bold;
+	border-collapse:collapse;
+}
+div.CellDisplay50porcentLeft{
+	display: table-cell;
+	width: 50%;
+	max-width: 50%;
+	height:340px;
+	overflow-y: scroll;
+	float: left;
+	font-size: 120%;
+}
+div.CellDisplay50porcentRight{
+	display: table-cell;
+	width: 50%;
+	max-width: 50%;
+	height:340px;
+	overflow-y: scroll;
+	float: right;
+	font-size: 120%;
+}
+#OTHead1,#OTHead2 {
+	text-align: center;
+	color: rgb(40,50,224);
+	font-size: 120%;
+	font-weight: bold;
+	border-collapse:collapse;
+	width: 100%;
+}
+.Titulo2{
+	text-align: center;
+	color: #c8c8c8;
+	font-size: 100%;
+	font-weight: bold;
+	border: none;
+	background: transparent;
+}
+#OrderTable,#EsperaTable{
+	width: 100%;
+}
